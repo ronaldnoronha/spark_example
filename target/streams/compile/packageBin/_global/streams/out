@@ -1,0 +1,17 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/ronnie/Documents/spark_example/target/scala-2.12/spark_example_2.12-0.1.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/apache[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org/apache[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/apache/spark[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org/apache/spark[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/apache/spark/examples[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org/apache/spark/examples[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/apache/spark/examples/mllib[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org/apache/spark/examples/mllib[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/apache/spark/examples/mllib/KMeansExample$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org/apache/spark/examples/mllib/KMeansExample$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	org/apache/spark/examples/mllib/KMeansExample.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org/apache/spark/examples/mllib/KMeansExample.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m

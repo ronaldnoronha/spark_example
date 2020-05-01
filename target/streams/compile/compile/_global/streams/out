@@ -1,0 +1,16 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/ronnie/Documents/spark_example/src/main/scala/SparkPi.scala:23:25: object mllib is not a member of package org.apache.spark[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.mllib.clustering.{KMeans, KMeansModel}[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ronnie/Documents/spark_example/src/main/scala/SparkPi.scala:24:25: object mllib is not a member of package org.apache.spark[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.mllib.linalg.Vectors[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ronnie/Documents/spark_example/src/main/scala/SparkPi.scala:37:36: not found: value Vectors[0m
+[0m[[0m[31merror[0m] [0m[0m    val parsedData = data.map(s => Vectors.dense(s.split(' ').map(_.toDouble))).cache()[0m
+[0m[[0m[31merror[0m] [0m[0m                                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ronnie/Documents/spark_example/src/main/scala/SparkPi.scala:42:20: not found: value KMeans[0m
+[0m[[0m[31merror[0m] [0m[0m    val clusters = KMeans.train(parsedData, numClusters, numIterations)[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ronnie/Documents/spark_example/src/main/scala/SparkPi.scala:50:21: not found: value KMeansModel[0m
+[0m[[0m[31merror[0m] [0m[0m    val sameModel = KMeansModel.load(sc, "target/org/apache/spark/KMeansExample/KMeansModel")[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
