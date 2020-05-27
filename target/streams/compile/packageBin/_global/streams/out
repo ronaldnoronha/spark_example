@@ -26,6 +26,10 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/com/example[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/example/kmeans[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/com/example/kmeans[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/example/kmeans/StreamingKMeansExample$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/com/example/kmeans/StreamingKMeansExample$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	com/example/kmeans/StreamingKMeansExample.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/com/example/kmeans/StreamingKMeansExample.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/example/kmeans/KMeansExample$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/com/example/kmeans/KMeansExample$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/example/kmeans/KMeansExample.class[0m

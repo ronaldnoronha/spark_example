@@ -1,1 +1,1 @@
-["com.example.kmeans.KMeansExample","org.apache.spark.examples.mllib.SparkPi","uber.KMeansUber"]
+["com.example.kmeans.KMeansExample","com.example.kmeans.StreamingKMeansExample","org.apache.spark.examples.mllib.SparkPi","uber.KMeansUber"]
