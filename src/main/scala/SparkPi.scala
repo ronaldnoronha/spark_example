@@ -24,7 +24,7 @@ import org.apache.spark.mllib.clustering.{KMeans, KMeansModel}
 import org.apache.spark.mllib.linalg.Vectors
 // $example off$
 
-object KMeansExample {
+object SparkPi {
 
   def main(args: Array[String]): Unit = {
 
