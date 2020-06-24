@@ -20,6 +20,14 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org/apache/spark/examples/mllib/SparkPi$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	org/apache/spark/examples/mllib/SparkPi.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/org/apache/spark/examples/mllib/SparkPi.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/streaming[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/streaming[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/streaming/NetworkWordCount.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/streaming/NetworkWordCount.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/streaming/NetworkWordCount$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/streaming/NetworkWordCount$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/com[0m
 [0m[[0m[0mdebug[0m] [0m[0m	com/example[0m
