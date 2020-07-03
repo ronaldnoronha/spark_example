@@ -1,1 +1,1 @@
-["com.example.kmeans.KMeansExample","com.example.kmeans.StreamingKMeansExample","example.streaming.NetworkWordCount","org.apache.spark.examples.mllib.SparkPi","uber.KMeansUber"]
+["com.example.kmeans.KMeansExample","com.example.kmeans.StreamingKMeansExample","example.stream.DirectKafkaWordCount","example.stream.SparkStreamingKafkaExample","example.stream.StreamingKafkaExample","example.streaming.NetworkWordCount","org.apache.spark.examples.mllib.SparkPi","uber.KMeansUber"]
