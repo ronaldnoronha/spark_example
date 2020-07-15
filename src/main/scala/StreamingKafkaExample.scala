@@ -4,7 +4,6 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql.SparkSession
 
 
-
 object StreamingKafkaExample {
   def main(args: Array[String]): Unit = {
     val spark = SparkSession

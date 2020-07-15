@@ -6,6 +6,7 @@ import org.apache.kafka.common.serialization.StringDeserializer
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming._
 import org.apache.spark.streaming.kafka010._
+import java.time.LocalDateTime
 
 /**
  * Consumes messages from one or more topics in Kafka and does wordcount.
@@ -53,11 +54,17 @@ object DirectKafkaWordCount {
       ConsumerStrategies.Subscribe[String, String](topicsSet, kafkaParams))
 
     // Get the lines, split them into words, count the words and print
-    val lines = messages.map(_.value)
-    val words = lines.flatMap(_.split(" "))
-    val wordCounts = words.map(x => (x, 1L)).reduceByKey(_ + _)
-    wordCounts.print()
+    val lines = messages.map(_.value).map(_.split(","))
+    val timestamp = lines.map(_(0)).map(_+" "+LocalDateTime.now().toString())
+    val coords = lines.map(_(1).split(" ").map(_.toDouble))
+    val target = lines.map(_(2).toInt)
+//    val wordCounts = lines.map(x => (x, 1L)).reduceByKey(_ + _)
+//    wordCounts.print()
+    coords.map(_(0)).print()
+    timestamp.print()
+//    coords.print()
 
+//    println(LocalDateTime.now().toString())
     // Start the computation
     ssc.start()
     ssc.awaitTermination()

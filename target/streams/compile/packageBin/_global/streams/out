@@ -26,12 +26,16 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/stream[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/stream/DirectKafkaWordCount.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/stream/DirectKafkaWordCount.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/stream/StreamingKMeansModelExample.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/stream/StreamingKMeansModelExample.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/stream/SparkStreamingKafkaExample.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/stream/SparkStreamingKafkaExample.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/stream/DirectKafkaWordCount$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/stream/DirectKafkaWordCount$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/stream/StreamingKafkaExample$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/stream/StreamingKafkaExample$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	example/stream/StreamingKMeansModelExample$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/stream/StreamingKMeansModelExample$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/stream/SparkStreamingKafkaExample$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/ronnie/Documents/spark_example/target/scala-2.12/classes/example/stream/SparkStreamingKafkaExample$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	example/stream/StreamingKafkaExample.class[0m

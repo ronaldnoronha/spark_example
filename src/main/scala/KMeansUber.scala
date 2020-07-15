@@ -27,6 +27,13 @@ object KMeansUber {
       StructField("Base", StringType, nullable = true)
     ))
 
+//    val schema = StructType(Array(
+//      StructField("x", DoubleType, nullable = false),
+//      StructField("y", DoubleType, nullable = false),
+//      StructField("z", DoubleType, nullable = false),
+//      StructField("target", StringType, nullable = false)
+//    ))
+
 //    val uberDf = spark.read.format("csv")
 //      .option("header","true")
 //      .option("dateFormat", "MM/dd/yyyy HH:mm:ss")
@@ -40,8 +47,11 @@ object KMeansUber {
       .option("mode", "DROPMALFORMED")
       .option("timestampFormat", "yyyy-MM-dd HH:mm:ss")
       .schema(schema)
-      .load("/home/ronald/uber.csv")
+      .load("/home/ronald/train.csv")
       .cache()
+
+
+    val df = spark.read.format("csv").option("header",value=true).option("delimiter",",").option("mode","DROPMALFORMED").schema(schema).load("/home/ronald/train.csv").cache()
 
     uberDf.printSchema()
     /*

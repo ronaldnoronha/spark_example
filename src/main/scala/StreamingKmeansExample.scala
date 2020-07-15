@@ -74,6 +74,7 @@ object StreamingKMeansExample {
 
     model.trainOn(trainingData)
     model.predictOnValues(testData.map(lp => (lp.label, lp.features))).print()
+    println(model.latestModel().clusterCenters)
 
     ssc.start()
     ssc.awaitTermination()
