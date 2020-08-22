@@ -15,42 +15,34 @@
  * limitations under the License.
  */
 
-// scalastyle:off println
-package org.apache.spark.examples.mllib
+package spark.examples
 
-import org.apache.spark.{SparkConf, SparkContext}
-// $example on$
-import org.apache.spark.mllib.clustering.{KMeans, KMeansModel}
-import org.apache.spark.mllib.linalg.Vectors
-// $example off$
+import scala.math.random
+import java.io.{File, PrintWriter}
 
+import org.apache.spark.sql.SparkSession
+
+/** Computes an approximation to pi */
 object SparkPi {
-
   def main(args: Array[String]): Unit = {
+    val spark = SparkSession
+      .builder
+      .appName("Spark Pi")
+      .getOrCreate()
+    val slices = if (args.length > 0) args(0).toInt else 2
+    val n = math.min(100000L * slices, Int.MaxValue).toInt // avoid overflow
+    val count = spark.sparkContext.parallelize(1 until n, slices).map { i =>
+      val x = random * 2 - 1
+      val y = random * 2 - 1
+      if (x*x + y*y <= 1) 1 else 0
+    }.reduce(_ + _)
 
-    val conf = new SparkConf().setAppName("KMeansExample")
-    val sc = new SparkContext(conf)
-
-    // $example on$
-    // Load and parse the data
-    val data = sc.textFile("data/mllib/kmeans_data.txt")
-    val parsedData = data.map(s => Vectors.dense(s.split(' ').map(_.toDouble))).cache()
-
-    // Cluster the data into two classes using KMeans
-    val numClusters = 2
-    val numIterations = 20
-    val clusters = KMeans.train(parsedData, numClusters, numIterations)
-
-    // Evaluate clustering by computing Within Set Sum of Squared Errors
-    val WSSSE = clusters.computeCost(parsedData)
-    println(s"Within Set Sum of Squared Errors = $WSSSE")
-
-    // Save and load model
-    clusters.save(sc, "target/org/apache/spark/KMeansExample/KMeansModel")
-    val sameModel = KMeansModel.load(sc, "target/org/apache/spark/KMeansExample/KMeansModel")
-    // $example off$
-
-    sc.stop()
+    val result = s"Pi is roughly ${4.0 * count / (n - 1)}"
+    val writer = new PrintWriter(new File("/home/ronald/resultSparkPi.txt"))
+    writer.write(result)
+    writer.close()
+    println(s"Pi is roughly ${4.0 * count / (n - 1)}")
+    spark.stop()
   }
 }
 // scalastyle:on println

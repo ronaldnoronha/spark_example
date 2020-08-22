@@ -11,10 +11,11 @@ import org.apache.spark.mllib.clustering.StreamingKMeansModel
 import org.apache.spark.mllib.linalg
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.regression.LabeledPoint
+import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.kafka010.{ConsumerStrategies, KafkaUtils, LocationStrategies}
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-object StreamingKMeansModelExample {
+object StreamingKMeansModelSocketExample {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("StreamingKMeansModelExample")
     val ssc = new StreamingContext(conf, Seconds(1))
@@ -33,42 +34,43 @@ object StreamingKMeansModelExample {
 
     val model = new StreamingKMeansModel(centers,weights)
 
-    val brokers = args(0)
-    val groupId = args(1)
-    val topics = args(2)
+    val messages = ssc.socketTextStream(args(0), args(1).toInt, StorageLevel.MEMORY_AND_DISK_SER)
 
-    val topicsSet = topics.split(",").toSet
-    val kafkaParams = Map[String, Object](
-      ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG -> brokers,
-      ConsumerConfig.GROUP_ID_CONFIG -> groupId,
-      ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG -> classOf[StringDeserializer],
-      ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG -> classOf[StringDeserializer])
-    val messages = KafkaUtils.createDirectStream[String, String](
-      ssc,
-      LocationStrategies.PreferConsistent,
-      ConsumerStrategies.Subscribe[String, String](topicsSet, kafkaParams))
+    val inputLines = messages.flatMap(_.split(",")))
 
-    val inputLines = messages.map(_.value).map(_.split(","))
+    inputLines.foreachRDD( rdd => {
+      println(rdd)
+    })
+
+//    val inputLines = messages.map(_.split(","))
+
+//    inputLines.foreachRDD ( rdd => {
+//      for (i <- rdd) {
+//        println(i.toString())
+//      }
+//    })
+
     val timestamp = inputLines.map(_(0)).map(_+" "+LocalDateTime.now().toString())
     val coords = inputLines.map(_(1).split(" ").map(_.toDouble)).map(x => Vectors.dense(x))
-    val target = inputLines.map(_(2).toInt)
-//    val timestampCreated, point, target = inputLines.flatMap(_.split(","))
-    coords.foreachRDD(rdd => {
-      model.update(rdd, 1.0, "batches")
-      println("Centers:")
-      println("Count: "+coords.count())
-      for (i <- model.clusterCenters) {
+
+    coords.foreachRDD(rdd=>{
+      for (i <- rdd){
         println(i.toString())
       }
     })
+//    val target = inputLines.map(_(2).toInt)
+//    val timestampCreated, point, target = inputLines.flatMap(_.split(","))
+//    coords.foreachRDD(rdd => {
+//      model.update(rdd, 1.0, "batches")
+//      println("Centers:")
+//      println("Count: "+coords.count())
+//      for (i <- model.clusterCenters) {
+//        println(i.toString())
+//      }
+//    })
 
     ssc.start()
     ssc.awaitTerminationOrTimeout(10)
-
-    coords.count().foreachRDD( rdd => {
-      println(rdd.id)
-    })
-
   }
 
 }
